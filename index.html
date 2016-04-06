@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="todo">
   <head>
     <meta charset="utf-8">
-    <title>To-do List</title>
+    <title>Todo List</title>
     <script src="angular.min.js"></script>
     <script src="app.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body ng-controller="MainController">
+    <input type="text" ng-model="item" placeholder="Enter item..." />
+    <button ng-click="addItem(item)">Add item</button>
 
+    <div ng-repeat="item in items track by $index">
+      <div class="item">
+        <input type="checkbox" />
+        {{item}}
+      </div>
+    </div>
   </body>
 </html>
