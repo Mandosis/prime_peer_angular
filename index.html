@@ -13,14 +13,21 @@
       <button ng-click="addItem(item)">Add item</button>
     </div>
 
+    <div class="error" ng-show="showError">
+      <p>
+        There is nothing to add!
+      </p>
+    </div>
     <div class="title">
       <h1>To-do</h1>
     </div>
     <div class="items" ng-repeat="item in items track by $index">
       <div class="item">
-        <input type="checkbox" id="item{{$index}}"/>
-        <label for="item{{$index}}" ng-class="{'': !isActive, 'active': isActive}" >{{item}}</label>
+        <input type="checkbox" ng-model="item.complete" id="item{{$index}}"/>
+        <label for="item{{$index}}" ng-class="{'': !iitem.complete, 'checked': item.complete}">{{item.name}}</label>
       </div>
     </div>
+
+    <button ng-click="removeChecked()">Removed checked</button>
   </body>
 </html>
