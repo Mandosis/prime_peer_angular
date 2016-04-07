@@ -9,8 +9,10 @@
   </head>
   <body ng-controller="MainController">
     <div class="input">
-      <input type="text" ng-model="item" placeholder="Enter item..." />
-      <button ng-click="addItem(item)">Add item</button>
+      <form>
+        <input type="text" ng-model="item" placeholder="Enter item..." />
+        <input type="submit" ng-click="addItem(item)" value="Add item"/>
+      </form>
     </div>
 
     <div class="error" ng-show="showError">
@@ -28,6 +30,8 @@
       </div>
     </div>
 
-    <button ng-click="removeChecked()">Removed checked</button>
+    <div class="remove">
+      <button ng-click="removeChecked()">Removed finished tasks</button>
+    </div>
   </body>
 </html>

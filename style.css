@@ -49,6 +49,11 @@ h1 {
 
 }
 
+.remove {
+  display: flex;
+  justify-content: center;
+}
+
 /* Buttons */
 button {
   outline: none;
@@ -65,6 +70,24 @@ button {
 }
 
 button:hover {
+  background: #07AA9E;
+}
+
+input[type="submit"] {
+  outline: none;
+  background: teal;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  color: #FFF;
+  text-transform: uppercase;
+  font-weight: bold;
+  height: 50px;
+  margin: 15px 5px 0px 5px;
+  transition: background 0.2s ease-in;
+}
+
+input[type="submit"]:hover {
   background: #07AA9E;
 }
 
@@ -95,4 +118,9 @@ input[type="text"]:focus {
   border: 3px solid teal;
   margin: 12px 2px 0px 2px;
   color: #EEE;
+}
+
+form {
+  display: flex;
+  width: 100%;
 }
