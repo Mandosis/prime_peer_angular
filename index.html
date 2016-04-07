@@ -8,13 +8,18 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body ng-controller="MainController">
-    <input type="text" ng-model="item" placeholder="Enter item..." />
-    <button ng-click="addItem(item)">Add item</button>
+    <div class="input">
+      <input type="text" ng-model="item" placeholder="Enter item..." />
+      <button ng-click="addItem(item)">Add item</button>
+    </div>
 
-    <div ng-repeat="item in items track by $index">
+    <div class="title">
+      <h1>To-do</h1>
+    </div>
+    <div class="items" ng-repeat="item in items track by $index">
       <div class="item">
-        <input type="checkbox" />
-        {{item}}
+        <input type="checkbox" id="item{{$index}}"/>
+        <label for="item{{$index}}" ng-class="{'': !isActive, 'active': isActive}" >{{item}}</label>
       </div>
     </div>
   </body>
